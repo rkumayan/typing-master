@@ -34,9 +34,16 @@
     width:30%;
     margin:auto;
     margin-top:40px;
+    font-family: Arial, sans-serif;
     
 }
+.speed .wordstyped, .timetaken{
+    color:white;
+    margin-left:10px;
+    margin-bottom: 10px;
+}
 .speed .demo{
+    margin:10px;
     color:blueviolet;
 }
 .typeagain{

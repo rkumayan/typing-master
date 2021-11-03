@@ -38,51 +38,31 @@ let intake = document.querySelector(".intake");
 
 let firstTime = 0;
 //add keyup event to the input tag
-    intake.addEventListener('keyup', (e) =>{  
+    intake.addEventListener('keypress', (e) =>{  
         firstTime +=1;      
         let text = e.target.value;
         // if space is encountered, reset e.target.value    
         if(e.code == "Space" ){ 
             intake.placeholder= "";
-            text = text.trim(); // to remove space at the end of the text
-            let arr = text.split(" ");            
-            if( arr.length ==1 && text == textArray[index] ){
-                e.target.value ="";
+            text = text.trim(); // to remove space at the end of the text           
+            if( text == textArray[index] ){
+                intake.value ="";
                 span[index].style.backgroundColor="black";                
                 index += 1;
                 span[index].style.backgroundColor="grey";
-                count += 1;
-            }           
-            if( arr.length>1){
-                console.log(" arr length exceeds 1 : ",arr);
-                for(let i =0 ; i<arr.length ; ++i){
-                    if(arr[i] == textArray[index] ){
-                        e.target.value ="";
-                        span[index].style.backgroundColor="black";                
-                        index += 1;
-                        span[index].style.backgroundColor="grey";
-                        count += 1;
-                    }
-                }
-            }
-            
+                count += 1;                
+            }  
+            // if end of the sentence is encountered                             
             if(index == textArray.length-1){
                 intake.disabled=true;
                 clearInterval(time);
                 // console.log(" the time is : ", timeCount);
                 calculateSpeed(timeCount,count);
-                let typeAgain =document.querySelector(".typeagain");
-                console.log(typeAgain);
-                typeAgain.style.display = "block";
-            }
+                document.querySelector(".typeagain").style.display = "block";
                 
-        }        
-        else if(textArray[index].indexOf(text) == 0){
-            span[index].style.backgroundColor="green";
-        }
-        if(textArray[index].indexOf(text) != 0  ){ 
-            span[index].style.backgroundColor="grey";            
-        }        
+            }                
+        }       
+        span[index].style.backgroundColor="grey";            
         if(firstTime==1)
             timing();
     });
@@ -98,8 +78,11 @@ function timing(){
 function calculateSpeed(second,wordTyped){
     let fraction = 60/second;
     let speed = Math.ceil(wordTyped*fraction);
-    console.log(" second : ",second," wordtyped : ",wordTyped," speed : ",speed," WPM");
+
     document.querySelector(".demo").innerHTML=" Your Speed : "+speed+"wpm";
+    document.querySelector(".wordstyped").innerHTML = " Words Typed : " +wordTyped;
+
+     document.querySelector(".timetaken").innerHTML = " Time Taken : "+second+" sec";
     document.querySelector(".speed").style.display = "block";
     
 }
