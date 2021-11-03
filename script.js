@@ -1,4 +1,24 @@
-let sentence ="always close watch put as never so write would air one picture learn song mountain spell she ask idea will air should give ";
+// let sentence ="always close watch put ";
+let sentence;
+// https://api.quotable.io/random
+//as never so write would air one picture learn song mountain spell she ask idea will air should give
+
+    //call the api here 
+    const url = "https://api.quotable.io/random";
+
+    const request = new XMLHttpRequest();
+    request.addEventListener('readystatechange',function(){
+        if( request.readyState == 4){
+            // console.log(request.responseText);
+            let data = JSON.parse(request.responseText);
+            console.log(data.content);
+            sentence = data.content + " ";
+        }        
+    });
+request.open('GET','https://api.quotable.io/random',false);
+request.send();
+    
+
 let container = document.querySelector(".container");
 
 //converrt the sentence to an array of words
@@ -51,6 +71,9 @@ let firstTime = 0;
                 clearInterval(time);
                 // console.log(" the time is : ", timeCount);
                 calculateSpeed(timeCount,count);
+                let typeAgain =document.querySelector(".typeagain");
+                console.log(typeAgain);
+                typeAgain.style.display = "block";
             }
                 
         }        
@@ -63,6 +86,8 @@ let firstTime = 0;
         if(firstTime==1)
             timing();
     });
+
+//add timing feature 
 let timeCount = 0;
 let time;
 function timing(){

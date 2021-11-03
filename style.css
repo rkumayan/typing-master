@@ -1,13 +1,15 @@
 *{
     margin:0px;
     padding:0px;
-    
+    background-color: black;
 }
 .container{
     width: 60%;
     margin:auto;
-    font-size: 35px;
+    font-size: 30px;
     margin-top:100px;
+    font-family: Arial, sans-serif;
+    letter-spacing: 2px;
 }
 .typing{
     width: 60%;
@@ -20,6 +22,7 @@
     width:100%;
     height:100%;
     font-size:30px;
+    border:2px solid grey;
 }
 ::placeholder{
     font-size: 25px;
@@ -33,4 +36,17 @@
 }
 .speed .demo{
     color:blueviolet;
+}
+.typeagain{
+    display:none;
+    width:10%;
+    margin:auto;
+    margin-top:20px;
+    color:white;
+    background-color:blueviolet;
+    border: 5px solid blueviolet;
+    padding:10px;
+    font-size:20px;
+    border-radius: 5px;
+    cursor:pointer;
 }
