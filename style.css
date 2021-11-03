@@ -10,6 +10,7 @@
     margin-top:100px;
     font-family: Arial, sans-serif;
     letter-spacing: 2px;
+    color:white;
 }
 .typing{
     width: 60%;
@@ -23,6 +24,7 @@
     height:100%;
     font-size:30px;
     border:2px solid grey;
+    color:white;
 }
 ::placeholder{
     font-size: 25px;
