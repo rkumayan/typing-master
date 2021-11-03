@@ -24,3 +24,13 @@
 ::placeholder{
     font-size: 25px;
 }
+.speed{
+    display:none;
+    width:30%;
+    margin:auto;
+    margin-top:40px;
+    
+}
+.speed .demo{
+    color:blueviolet;
+}
