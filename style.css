@@ -2,6 +2,7 @@
     margin:0px;
     padding:0px;
     background-color: black;
+    font-family: Arial, sans-serif;
 }
 .container{
     width: 60%;
@@ -58,4 +59,11 @@
     font-size:20px;
     border-radius: 5px;
     cursor:pointer;
+}
+.copyright{
+    position:fixed;
+    bottom:10px;
+    right:10px;
+    color:white;
+
 }
